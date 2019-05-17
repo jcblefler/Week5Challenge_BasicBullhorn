@@ -1,0 +1,21 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1556262298-e85892643712?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+    background-size: cover;
+}
+
+header {
+    text-align: center;
+}
+
+
+.info {
+    text-align: center;
+    background-color: floralwhite;
+}
+
+.content {
+    background-color: aliceblue;
+}
+.actions a:link {
+    color: wheat;
+}
