@@ -28,7 +28,7 @@
                 <p >Enter your message and hit the submit button to post it.</p>
             </div>
             <div class="col-sm-9" style="padding-top: 20px;">
-                <form action="#" th:action="@{/process}" th:object="${message}" method="post">
+                <form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
                     <input type="hidden" th:field="*{id}" />
 
                     <div style=" width: 50%; float: left;">
@@ -46,6 +46,8 @@
                     <div style=" width: 50%; float: right;">
                         <h4>Content: </h4><textarea rows="5" cols="50" th:field="*{content}" ></textarea>
                         <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span> <br />
+
+                        <input type="file" name="file"><br />
                     </div>
 
                     <input type="submit" value="Submit" />

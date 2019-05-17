@@ -28,6 +28,9 @@
                 </div>
                 <div class="col-sm-6 content">
                     <p style="font-size: 1.5em;" th:text="${message.content}"></p>
+                    <div style="text-align: center" th:if="${message.image} != null">
+                        <img th:src="${message.image}" />
+                    </div>
                 </div>
                 <div class="col-sm-2 actions">
                     <a style="font-size: 1.5em" th:href="@{/update/{id}(id=${message.id})}">Update</a><br />
