@@ -7,23 +7,27 @@
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!--Style CSS-->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
 
 </head>
-<body>
-<header>
+<body style="background-color: cadetblue">
+<header style="text-align: center; padding-top: 60px;">
     <h1>Message App</h1>
     <h4>Post your thoughts</h4>
 </header>
 
-<section>
+<section style="padding-left: 30px">
+    <a style="font-size: 1.5em" href="/">Show All Messages</a>
+</section>
+
+<section style="padding-top: 60px">
     <div class="container">
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-3" style="text-align: center">
                 <h2><em>Message</em></h2>
+                <p >Enter your message and hit the submit button to post it.</p>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-9" style="padding-top: 20px;">
                 <form action="#" th:action="@{/process}" th:object="${message}" method="post">
                     <input type="hidden" th:field="*{id}" />
 
@@ -40,7 +44,7 @@
                     </div>
 
                     <div style=" width: 50%; float: right;">
-                        <h4>Content: </h4><textarea rows="5" th:field="*{content}" ></textarea>
+                        <h4>Content: </h4><textarea rows="5" cols="50" th:field="*{content}" ></textarea>
                         <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span> <br />
                     </div>
 
@@ -49,7 +53,6 @@
                 </form>
             </div>
 
-            <div class="col-sm-2"></div>
         </div>
 
     </div>

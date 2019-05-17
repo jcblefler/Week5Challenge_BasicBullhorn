@@ -7,25 +7,38 @@
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!--Style CSS-->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+
 </head>
-<body>
-    <header>
+<body style="background-color: cadetblue">
+    <header style="text-align: center; padding-top: 60px;">
         <h1>Message App</h1>
         <h4>Post your thoughts</h4>
     </header>
-    <section>
-        <a href="/">Show All Messages</a>
-        <a href="/add">Add a Message</a>
+    <section style="padding-left: 30px">
+        <a style="font-size: 1.5em" href="/">Show All Messages</a><br />
+        <a style="font-size: 1.5em" href="/add">Add a Message</a>
     </section>
 
     <section>
-        Title: <span th:text="${message.title}"></span><br />
-        Posted By: <span th:text="${message.postedBy}"></span><br />
-        Posted Date: <span th:text="${message.postedDate}"></span><br />
-        Content: <span th:text="${message.content}"></span><br />
-        <a th:href="@{/delete/{id}(id=${message.id})}">Delete this Message</a>
+        <div class="container">
+            <div class="row">
+                <div style="text-align: center" class="col-sm-4">
+                    <h4>Title: </h4><span th:text="${message.title}"></span><br />
+                    <h4>Posted By: </h4><span th:text="${message.postedBy}"></span><br />
+                    <h4>Posted Date: </h4><span th:text="${message.postedDate}"></span><br />
+                </div>
+
+                <div class="col-sm-6">
+                    <h4>Content: </h4><span style="font-size: 1.5em;" th:text="${message.content}"></span><br />
+                </div>
+
+                <div class="col-sm-2">
+                    <a style="font-size: 1em" th:href="@{/delete/{id}(id=${message.id})}">Delete this Message</a>
+                </div>
+            </div>
+        </div>
+
     </section>
 
 
